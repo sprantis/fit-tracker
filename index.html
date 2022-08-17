@@ -5,65 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://kit.fontawesome.com/b3e3f4c117.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" src="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Fit Tracker</title>
 </head>
 <body>
-    <div class="">
-        <div class="">
-            <h1>Fit Tracker</h1>
-            <nav>
-                <ul class="">
-                    <li class="">nav1</li>
-                    <li class="">nav2</li>
-                    <li class="">nav3</li>
-                    <li class="">nav4</li>
-                </ul>
-            </nav>  
-        </div>
-        <div class=>
-            <form class="">
-                <label>Exercise</label>
-                <input id="exercise" type="text">
-                <label>Repetition</label>
-                <input id="repetition" type="text">
-                <label>Set</label>
-                <input id="set" type="text">
-                <label>Weight/Resistance</label>
-                <input id="weight-resistance" type="text">
-                <label>Volume</label>
-                <input id="volume" type="text">
-            </form>
-        </div>
-        <div class=>
-            <form class="">
-                <label>Intake Calories</label>
-                <input id="calories" type="text">
-                <label>Duration of Workout</label>
-                <input id="workout-time" type="text">
-                <label>Calories Burned</label>
-                <input id="cals-burned" type="text">
-            </form>
-        </div>
         <div>
-            <table class="">
-                <tr>
-                    <th>Exercise</th>
-                    <th>Repetition</th>
-                    <th>Set</th>
-                    <th>Weight/Resistance</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                </tr>
-            </table>
-        </div>
-     </div>  
-    <script src="https://github.com/users/sprantis/projects/3"></script>
-    <scripts src="'./assets/script.js"></scripts>
+            <div>
+                <div class="hero is-primary">
+                    <h1 class="title">Fit Tracker</h1>
+                    <div>
+                        <nav class="navbar-end" role="navigation" aria-label="main navigation">
+                            <ul class="navbar-brand">
+                                <li class="navbar-item has-text-info"><strong>nav1</strong></li>
+                                <li class="navbar-item has-text-info"><strong>nav2</strong></li>
+                                <li class="navbar-item has-text-info"><strong>nav3</strong></li>
+                                <li class="navbar-item has-text-info"><strong>nav4</strong></li>
+                            </ul>
+                        </nav> 
+                     </div> 
+                </div>
+            </div>   
+            <div class="row">
+                <div class="column">
+                    <div class="flex-container2">
+                        <form class="form1 box is-primary">
+                            <label>Exercise</label>
+                            <input id="exercise" class="input is-info" type="text">
+                            <label>Repetition</label>
+                            <input id="repetition" class="input is-info" type="text">
+                            <label>Set</label>
+                            <input id="set" class="input is-info" type="text">
+                            <label>Weight/Resistance</label>
+                            <input id="weight-resistance" class="input is-info" type="text">
+                            <label>Volume</label>
+                            <input id="volume" class="input is-info" type="text">
+                            <button class="button is-primary" type="submit" value="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class="flex-container3">
+                        <form class="form2 box is-primary">
+                            <label class="label">Food Consumed</label>
+                            <input id="calories" class="input select is-info" type="text">
+                            <label class="label">Duration of Workout</label>
+                            <input id="workout-time" class="input select is-info" type="text">
+                            <label class="label">Calories Burned</label>
+                            <input id="cals-burned" class="input select is-info" type="text">
+                            <button class="button is-primary" type="submit" value="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>    
+                <div>
+                    <div class="table-container">
+                        <table class="table box is-bordered is-hoverable">
+                            <tr>
+                                <th>Exercise</th>
+                                <th>Repetition</th>
+                                <th>Set</th>
+                                <th>Weight/Resistance</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+               
+        </div>  
+        <script src="https://kit.fontawesome.com/b3e3f4c117.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="./assets/script.js"></script>
 </body>
 </html>
