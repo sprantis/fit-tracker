@@ -43,6 +43,12 @@ function getData() {
 function showData() {
     var workouts = getData();
     var tbl = document.getElementById("myTable");
+    //deleteing the extra table rows that come on submit click
+    var x = tbl.rows.length;
+    while(--x){
+        tbl.deleteRow(x);
+    }
+    //for loop for adding table rows with localstorage info
     for (i = 0; i < workouts.length; i++) {
         var insertRow = tbl.insertRow();
         var cell1 = insertRow.insertCell();
