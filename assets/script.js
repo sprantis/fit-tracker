@@ -66,24 +66,6 @@ function showData() {
     }
 };
 
-//function to pull workout api
-function getWorkouts() {
-    return $.ajax({
-        accepts: 'application/json',
-        url: 'https://wger.de/api/v2/workout/',
-        headers: {
-            Accept: 'application/json',
-            Authorization: 'Token fcb349c50df8f75a54860393aac33f92cb66e40d'
-        }
-    })
-        .then(function(response) {
-            console.log(response);
-        })
-        .catch(function(err) {
-            console.error(err);
-            // do something to notify the user
-        })
-};
 
 
 //function testRun() {
@@ -104,7 +86,7 @@ function getWorkouts() {
 function workoutSearch(e) {
     e.preventDefault();
 
-
+    //input value to search by
     var workInputValue = document.querySelector('#workSearch').value;
 
     return $.ajax({
@@ -115,8 +97,22 @@ function workoutSearch(e) {
             Authorization: 'Token fcb349c50df8f75a54860393aac33f92cb66e40d',
         }
     })
-        .then(function(res) {
-            console.log(res)
+        .then(function(arr) {
+            console.log(arr)
+            arr.results.forEach(function(result, i) {
+                console.log(result);
+
+                var names = result.name.find(function(obj) {
+                    console.log(obj)
+                    if(obj.names == workInputValue) {
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                })
+                console.log(names);
+            })
         })
         
 
@@ -124,26 +120,26 @@ function workoutSearch(e) {
 };
 
 //function for creating info card for workout searches
-function workoutResults(workObj) {
+//function workoutResults(workObj) {
     //info card being created
-    var workCard = document.createElement('div');
-    workCard.classList.add();
+    //var workCard = document.createElement('div');
+   // workCard.classList.add();
 
     //info body being created and attached to the card
-    var workBody = document.createElement('div');
-    workBody.classList.add();
-    workCard.append(workBody);
+   // var workBody = document.createElement('div');
+   // workBody.classList.add();
+   // workCard.append(workBody);
 
     //title being created for the card/body
-    var workTitle = document.createElement('h3');
-    workTitle.textContent = workObj.title;
+   // var workTitle = document.createElement('h3');
+   // workTitle.textContent = workObj.title;
 
     //info of the workout being created in a paragraph
-    var bodyContent = document.createElement('p');
-    bodyContent.innerHTML =
-        '<strong>Description:</strong>' + workObj.description[0];
+   // var bodyContent = document.createElement('p');
+   // bodyContent.innerHTML =
+       // '<strong>Description:</strong>' + workObj.description[0];
 
-};
+//};
 
 
 
