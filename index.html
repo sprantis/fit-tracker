@@ -4,81 +4,214 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS tools used: Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Fit Tracker</title>
 </head>
 <body>
-        <div>
+    <!-- Entire page -->
+    <div class="has-background-warning-light ">
+        <div class="hero is-success">
             <div>
-                <div class="hero is-primary">
-                    <h1 class="title">Fit Tracker</h1>
+                <span class="title some-margin">Fit Tracker</span> 
+                <i class="fa-solid fa-fire-flame-curved lg-icon"></i>
+            </div>
+            <div>
+                <!-- Links in navbar bring user to labelled section -->
+                <nav class="navbar-end" role="navigation" aria-label="main navigation">
+                    <ul class="navbar-brand">
+                        <li class="navbar-item has-text-warning-light">
+                            <a href="#fitness"><strong>Fitness</strong></a>
+                        </li>
+                        <li class="navbar-item has-text-warning-light">
+                            <a href="#nutrition"><strong>Nutrition</strong></a>
+                        </li>
+                        <!-- This is a nav bar item for future development -->
+                        <!-- <li class="navbar-item has-text-warning-light">
+                            <strong>Resources</strong>
+                        </li> -->
+                    </ul>
+                </nav> 
+            </div> 
+        </div>
+        <!-- Main Content -->
+        <div>
+            <!-- Fitness Section -->
+            <div class="column">
+                <strong id="fitness">Fitness</strong>
+                <!-- User Input -->
+                <div class="box">
                     <div>
-                        <nav class="navbar-end" role="navigation" aria-label="main navigation">
-                            <ul class="navbar-brand">
-                                <li class="navbar-item has-text-info"><strong>nav1</strong></li>
-                                <li class="navbar-item has-text-info"><strong>nav2</strong></li>
-                                <li class="navbar-item has-text-info"><strong>nav3</strong></li>
-                                <li class="navbar-item has-text-info"><strong>nav4</strong></li>
-                            </ul>
-                        </nav> 
-                     </div> 
+                        <i class="fa-solid fa-dumbbell"></i>
+                        <span><strong>Select a Muscle Group, then an Exercise, then Submit</strong></span>
+                    </div>
+                    <br>
+                    <div class="columns">
+                        <div class="column is-one-third">
+                            <div class="columns">
+                                <div class="column">
+                                    <button class="button is-primary muscle-group-btn is-fullwidth" id="shoulders-btn" type="submit">Shoulders</button>
+                                </div>
+                                <div class="column">
+                                    <button class="button is-primary muscle-group-btn is-fullwidth" id="arms-btn" type="submit">Arms</button>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <button class="button is-primary muscle-group-btn is-fullwidth" id="chest-btn" type="submit">Chest</button>
+                                </div>
+                                <div class="column">
+                                    <button class="button is-primary muscle-group-btn is-fullwidth" id="abs-btn" type="submit">Abs</button>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <button class="button is-primary muscle-group-btn is-fullwidth" id="back-btn" type="submit">Back</button>
+                                </div>
+                                <div class="column">
+                                    <button class="button is-primary muscle-group-btn is-fullwidth" id="legs-btn" type="submit">Legs</button>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <button class="button is-primary muscle-group-btn is-fullwidth" id="calves-btn" type="submit">Calves</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="muscle-group-list-container" class="column is-one-third x-center">
+                            <div id="workout-list"></div>
+                        </div>
+                        <div class="column is-one-third">
+                            <form class="form1 is-primary">
+                                <label>Exercise</label>
+                                <input id="exercise" class="input is-info" type="text">
+                                <label>Repetitions</label>
+                                <input id="repetitions" class="input is-info" type="text">
+                                <label>Sets</label>
+                                <input id="sets" class="input is-info" type="text">
+                                <label>Weight/Resistance (lbs)</label>
+                                <input id="weight-resistance" class="input is-info" type="text">
+                            </form>
+                            <br>
+                            <button class="button is-info" id="submit-fitness-btn" type="submit" value="submit">Submit</button>
+                        </div>
+                    </div>
                 </div>
-            </div>   
-            <div class="row">
-                <div class="column">
-                    <div class="flex-container2">
-                        <form class="form1 box is-primary">
-                            <label>Exercise</label>
-                            <input id="exercise" class="input is-info" type="text">
-                            <label>Repetition</label>
-                            <input id="repetition" class="input is-info" type="text">
-                            <label>Set</label>
-                            <input id="set" class="input is-info" type="text">
-                            <label>Weight/Resistance</label>
-                            <input id="weight-resistance" class="input is-info" type="text">
-                            <label>Volume</label>
-                            <input id="volume" class="input is-info" type="text">
-                            <button class="button is-primary" id="buttonOne" type="submit" value="submit">Submit</button>
-                        </form>
-                    </div>
-                    <div class="flex-container3">
-                        <form class="form2 box is-primary">
-                            <label class="label">Food Consumed</label>
-                            <input id="calories" class="input select is-info" type="text">
-                            <label class="label">Duration of Workout</label>
-                            <input id="workout-time" class="input select is-info" type="text">
-                            <label class="label">Calories Burned</label>
-                            <input id="cals-burned" class="input select is-info" type="text">
-                            <button class="button is-primary" id="buttonTwo" type="submit" value="submit">Submit</button>
-                        </form>
-                    </div>
-                </div>    
-                <div>
-                    <div class="table-container">
-                        <table class="table box is-bordered is-hoverable" id="myTable">
+                <!-- Table Generation from Local Storage -->
+                <div class="box">
+                    <div>
+                        <i class="fa-solid fa-chart-line"></i> 
+                        <strong>View your Fitness Stats</strong> 
+                    </div>    
+                    <br>
+                    <div>
+                        <table id="fitness-stats-table" class="table is-bordered is-hoverable is-fullwidth">
                             <tr>
                                 <th>Exercise</th>
-                                <th>Repetition</th>
-                                <th>Set</th>
-                                <th>Weight/Resistance</th>
-                                <th>Volume</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
+                                <th>Repetitions</th>
+                                <th>Sets</th>
+                                <th>Weight / Resistance</th>
+                                <th>Submission Date & Time</th>
                             </tr>
                         </table>
+                        <button class="button is-danger" id="clear-fitness-stats-btn" value="Clear Fitness Stat History">Clear Fitness Stat History</button>
                     </div>
                 </div>
             </div>
-               
-        </div>  
-        <script src="https://kit.fontawesome.com/b3e3f4c117.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="./assets/script.js"></script>
+            <!-- Nutrition Section -->
+            <div class="column">
+                <strong id="nutrition">Nutrition</strong> 
+                <!-- User Input -->
+                <div class="box">
+                    <div>
+                        <i class="fa-solid fa-apple-whole"></i> 
+                        <span><strong>Select a Food, then Submit</strong></span>  
+                    </div>
+                    <div class="columns">
+                        <div id="foods" class="column">
+                            <div id="fruits">
+                                <p>Fruits</p>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Banana</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Grapes</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Oranges</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Strawberries</button>
+                            </div>
+                            <div id="veggies">
+                                <p>Veggies</p>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Spinach</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Carrots</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Brussel Sprouts</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Green Peas</button>
+                            </div>
+                            <div id="proteins">
+                                <p>Proteins</p>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Beef</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Pork</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Chicken</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Black Beans</button>
+                            </div>
+                            <div id="whole-grains">
+                                <p>Whole Grains</p>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Popcorn</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Brown Rice</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">White Rice</button>
+                                <button class="button is-primary food-btn" id="shoulders-btn" type="submit">Wheat Bread</button>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <form class="form1 is-primary">
+                                <label>Food Name</label>
+                                <input id="food-name" class="input is-info" type="text">
+                                <label>Protein (g)</label>
+                                <input id="protein" class="input is-info" type="text">
+                                <label>Carbohydrates (g)</label>
+                                <input id="carbs" class="input is-info" type="text">
+                                <label>Fat (g)</label>
+                                <input id="fat" class="input is-info" type="text">
+                                <label>Calories</label>
+                                <input id="calories" class="input is-info" type="text">
+                                <label>Serving Size (g)</label>
+                                <input id="serving-size" class="input is-info" type="text">
+                                <label>Servings</label>
+                                <input id="servings" class="input is-info" type="text">
+                            </form>
+                            <br>
+                            <button class="button is-info" id="submit-nutrition-btn" type="submit" value="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Table Generation from Local Storage -->
+                <div class="box">
+                    <div>
+                        <i class="fa-solid fa-chart-line"></i> 
+                        <strong>View your Nutrition Stats</strong>
+                    </div>    
+                    <br>
+                    <div>
+                        <table id="nutrition-stats-table" class="table is-bordered is-hoverable is-fullwidth">
+                            <tr>
+                                <th>Food Name</th>
+                                <th>Protein</th>
+                                <th>Carbohydrates</th>
+                                <th>Fat</th>
+                                <th>Calories</th>
+                                <th>Serving Size</th>
+                                <th>Servings</th>
+                                <th>Date & Time</th>
+                            </tr>
+                        </table>
+                        <button class="button is-danger" id="clear-nutrition-stats-btn" value="Clear Nutrition Stat History">Clear Nutrition Stat History</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>  
+    <!-- JS tools used: Font Awesome, jQuery, Moment.js -->
+    <script src="https://kit.fontawesome.com/b3e3f4c117.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/workouts.js"></script>
+    <script src="./assets/nutrition.js"></script>
 </body>
 </html>
