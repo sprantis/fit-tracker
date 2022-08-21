@@ -4,43 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS tools used: Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Fit Tracker</title>
 </head>
 <body>
+    <!-- Entire page -->
     <div class="has-background-warning-light ">
-        <div>
-            <div class="hero is-success">
-                <div>
-                    <span class="title some-margin">Fit Tracker</span> 
-                    <i class="fa-solid fa-fire-flame-curved lg-icon"></i>
-                </div>
-                <div>
-                    <nav class="navbar-end" role="navigation" aria-label="main navigation">
-                        <ul class="navbar-brand">
-                            <li class="navbar-item has-text-warning-light">
-                                <a href="#fitness"><strong>Fitness</strong></a>
-                            </li>
-                            <li class="navbar-item has-text-warning-light">
-                                <a href="#nutrition"><strong>Nutrition</strong></a>
-                            </li>
-                            <!-- This is a nav bar item for future development -->
-                            <!-- <li class="navbar-item has-text-warning-light">
-                                <strong>Resources</strong>
-                            </li> -->
-                        </ul>
-                    </nav> 
-                </div> 
+        <div class="hero is-success">
+            <div>
+                <span class="title some-margin">Fit Tracker</span> 
+                <i class="fa-solid fa-fire-flame-curved lg-icon"></i>
             </div>
-        </div>   
+            <div>
+                <!-- Links in navbar bring user to labelled section -->
+                <nav class="navbar-end" role="navigation" aria-label="main navigation">
+                    <ul class="navbar-brand">
+                        <li class="navbar-item has-text-warning-light">
+                            <a href="#fitness"><strong>Fitness</strong></a>
+                        </li>
+                        <li class="navbar-item has-text-warning-light">
+                            <a href="#nutrition"><strong>Nutrition</strong></a>
+                        </li>
+                        <!-- This is a nav bar item for future development -->
+                        <!-- <li class="navbar-item has-text-warning-light">
+                            <strong>Resources</strong>
+                        </li> -->
+                    </ul>
+                </nav> 
+            </div> 
+        </div>
+        <!-- Main Content -->
         <div>
+            <!-- Fitness Section -->
             <div class="column">
                 <strong id="fitness">Fitness</strong>
+                <!-- User Input -->
                 <div class="box">
                     <div>
-                        <span><strong>Select a Muscle Group, then an Exercise, then Submit</strong></span>
                         <i class="fa-solid fa-dumbbell"></i>
+                        <span><strong>Select a Muscle Group, then an Exercise, then Submit</strong></span>
                     </div>
                     <br>
                     <div class="columns">
@@ -93,16 +97,16 @@
                             <button class="button is-info" id="submit-fitness-btn" type="submit" value="submit">Submit</button>
                         </div>
                     </div>
-                    <!-- class="table-container is-flex-wrap-wrap" -->
                 </div>
+                <!-- Table Generation from Local Storage -->
                 <div class="box">
                     <div>
-                        <strong>View your Fitness Stats</strong>
                         <i class="fa-solid fa-chart-line"></i> 
+                        <strong>View your Fitness Stats</strong> 
                     </div>    
                     <br>
                     <div>
-                        <table id="fitness-stats-table" class="table is-bordered is-hoverable">
+                        <table id="fitness-stats-table" class="table is-bordered is-hoverable is-fullwidth">
                             <tr>
                                 <th>Exercise</th>
                                 <th>Repetitions</th>
@@ -115,12 +119,14 @@
                     </div>
                 </div>
             </div>
+            <!-- Nutrition Section -->
             <div class="column">
                 <strong id="nutrition">Nutrition</strong> 
+                <!-- User Input -->
                 <div class="box">
                     <div>
+                        <i class="fa-solid fa-apple-whole"></i> 
                         <span><strong>Select a Food, then Submit</strong></span>  
-                        <i class="fa-solid fa-apple-whole"></i>  
                     </div>
                     <div class="columns">
                         <div id="foods" class="column">
@@ -174,34 +180,16 @@
                             <button class="button is-info" id="submit-nutrition-btn" type="submit" value="submit">Submit</button>
                         </div>
                     </div>
-                    <div id="nutrition-facts">
-                        <table class="is-hidden" >
-                            <tr>
-                                <td id="food-name-data"></td>
-                            </tr>
-                            <tr>
-                                <td id="protein-data"></td>
-                            </tr>
-                            <tr>
-                                <td id="carbs-data"></td>
-                            </tr>
-                            <tr>
-                                <td id="fat-data"></td>
-                            </tr>
-                            <tr>
-                                <td id="calories-data"></td>
-                            </tr>
-                        </table>
-                    </div>
                 </div>
+                <!-- Table Generation from Local Storage -->
                 <div class="box">
                     <div>
-                        <strong>View your Nurtrition Stats</strong>
                         <i class="fa-solid fa-chart-line"></i> 
+                        <strong>View your Nurtrition Stats</strong>
                     </div>    
                     <br>
                     <div>
-                        <table id="nutrition-stats-table" class="table is-bordered is-hoverable">
+                        <table id="nutrition-stats-table" class="table is-bordered is-hoverable is-fullwidth">
                             <tr>
                                 <th>Food Name</th>
                                 <th>Protein</th>
@@ -219,6 +207,7 @@
             </div>    
         </div>
     </div>  
+    <!-- JS tools used: Font Awesome, jQuery, Moment.js -->
     <script src="https://kit.fontawesome.com/b3e3f4c117.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
