@@ -26,7 +26,7 @@ This app is about tracking YOUR progress, YOUR journey, and YOUR successes. It d
 ## Techonologies used: 
 HTML5, CSS3, JavaScript, jQuery, Bulma.css, Moment.js, Font Awesome
 
-Fitness API: https://wger.de/en/software/api
+Fitness API: https://wger.de/en/software/api | 
 Nutrition API: https://fdc.nal.usda.gov/api-guide.html
 
 
