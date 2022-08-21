@@ -1,42 +1,26 @@
-
-
-/* ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row-reverse;
-    float: right;
-    padding: opx;
-} */
-/* 
-.row{
-    display: flex;
-    flex-direction: row;
+.food-btn{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-/* .column{
+.exercise-choice{
+    background-color: rgb(185, 182, 182);
+    border-radius: 5px;
+    margin-top: 5px;
     display:flex;
-    flex-direction:column;
-    margin: 50px;
-} */
-
-/* .flex-container2, .flex-container3 {
-padding: 20px 20px 20px, 20px;
-   margin-top: 50px;
-   width: 400px;
-   height: 450px;
+    justify-content: center;
+    width: 300px;
 }
-/* 
-.form1, .form2{
-    width: 100%;
-    padding: 10px 10px;
-    margin: 15px 0;
-    box-sizing: border-box;
-} 
 
+.x-center{
+    display: flex;
+    justify-content: center;
+}
 
- .table-container, .table-container2 {
-    height: 400px;
-    width: 600px;
-    margin-top: 50px;
-    margin-right: 600px;
-} 
+.some-margin {
+    margin: 15px;
+}
+
+.lg-icon{
+    font-size: 35px;
+}
