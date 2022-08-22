@@ -37,6 +37,16 @@
         </div>
         <!-- Main Content -->
         <div>
+            <!-- Modal for errors -->
+            <div id="error-modal" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                  <div class="box">
+                    <p id="error-modal-text"></p>
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
             <!-- Fitness Section -->
             <div class="column">
                 <strong id="fitness">Fitness</strong>
@@ -177,7 +187,7 @@
                                 <input id="servings" class="input is-info" type="text">
                             </form>
                             <br>
-                            <button class="button is-info" id="submit-nutrition-btn" type="submit" value="submit">Submit</button>
+                            <button class="button js-modal-trigger is-info" id="submit-nutrition-btn" type="submit" value="submit" data-target="modal-js-example">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -211,6 +221,8 @@
     <script src="https://kit.fontawesome.com/b3e3f4c117.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Custom script order: modal.js, workouts.js, nutrition.js -->
+    <script src="./assets/modal.js"></script>
     <script src="./assets/workouts.js"></script>
     <script src="./assets/nutrition.js"></script>
 </body>

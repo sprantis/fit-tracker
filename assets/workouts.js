@@ -13,10 +13,12 @@ let legsBtn = document.getElementById("legs-btn");
 let calvesBtn = document.getElementById("calves-btn");
 
 let muscleGroupBtns = document.querySelectorAll(".muscle-group-btn");
-let muscleGroupListContainer =
-    document.getElementById("muscle-group-list-container");
+let muscleGroupListContainer = document.getElementById("muscle-group-list-container");
 let submitFitnessBtn = document.getElementById("submit-fitness-btn");
 let clearFitnessStatsBtn = document.getElementById('clear-fitness-stats-btn');
+
+let errorModal = document.getElementById('error-modal');
+let errorModalText = document.getElementById('error-modal-text');
 
 // gets data from localstorage
 function getFitnessProgress() {
@@ -25,7 +27,7 @@ function getFitnessProgress() {
         return JSON.parse(str);
     }
     return [];
-};
+}
 
 // creates new rows on the table with info from localstorage
 function showFitnessProgress() {
@@ -53,7 +55,7 @@ function showFitnessProgress() {
         cell4.innerHTML = `${workouts[i].weight} lbs`;
         cell5.innerHTML = workouts[i].time;
     }
-};
+}
 
 // generate list of workouts based on a specific muscle group
 function populateWorkoutsList(specificMuscleGroupArray) {
@@ -74,7 +76,7 @@ function populateWorkoutsList(specificMuscleGroupArray) {
     for (i = 0; i < exerciseChoiceList.length; i++) {
         exerciseChoiceList[i].addEventListener("click", populateWorkoutStatForm);
     }
-};
+}
 
 // fill in input fields with data
 function populateWorkoutStatForm() {
@@ -90,8 +92,7 @@ function workoutSearch(e) {
     let workInputValue = this.innerHTML;
 
 // ajax call to return entire list of exercises with no specific search criteria
-// Note: " url: 'https://wger.de/api/v2/exerciseinfo/?limit=419' "
-// will provide all 419 available exercises
+// Note: " url: 'https://wger.de/api/v2/exerciseinfo/?limit=419' " will provide all 419 available exercises
 // limit call to 100 for proof of concept and return less exercises to display
     return $.ajax({
         accepts: 'application/json',
@@ -101,28 +102,28 @@ function workoutSearch(e) {
             Authorization: 'Token fcb349c50df8f75a54860393aac33f92cb66e40d',
         }
     })
-        .then(function (response) {
-            // "response" variable is the response object that is returned
-            // "results" variable is the array of workout objects
-            let results = response.results;
-            let specificMuscleGroupArray = [];
+    .then(function (response) {
+        // "response" variable is the response object that is returned
+        // "results" variable is the array of workout objects
+        let results = response.results;
+        let specificMuscleGroupArray = [];
 
-// for every workout that matches in name and the language is English,
-// push it to the specificMuscleGroupArray
-            for (i = 0; i < results.length; i++) {
-                if (
-                    workInputValue == results[i].category.name &&
-                    results[i].language.full_name == 'English'
-                ) {
-                    specificMuscleGroupArray.push(results[i].name);
-                }
+        // for every workout that matches in name and the language is English,
+        // push it to the specificMuscleGroupArray
+        for (i = 0; i < results.length; i++) {
+            if (
+                workInputValue == results[i].category.name &&
+                results[i].language.full_name == 'English'
+            ) {
+                specificMuscleGroupArray.push(results[i].name);
             }
-
+        }
             populateWorkoutsList(specificMuscleGroupArray);
-        })
-        .catch(function (err) {
-            alert(`Error: ${err}`);
-        })
+    })
+    .catch(function (err) {
+        errorModalText.innerHTML = `Error: ${err}`;
+        errorModal.classList.add('is-active');
+    })    
 };
 
 // clear out localstorage where the key is fitnessProgress and
@@ -148,16 +149,16 @@ for (i = 0; i < muscleGroupBtns.length; i++) {
 submitFitnessBtn.addEventListener('click', function (e) {
     e.preventDefault();
 
-// get localstorage array
-// needed to define array locally within function. Global variable would not work
+    // get localstorage array
+    // needed to define array locally within function. Global variable would not work
     const fitnessProgressArray = getFitnessProgress();
 
 // if statement confirms that reps, sets, and weight inputs from user are valid numbers
     if (
-        parseInt(reps.value) &&
-        parseInt(sets.value) &&
-        parseInt(weight.value)
-    ) {
+        (parseInt(reps.value) || parseInt(reps.value) == 0) &&
+        (parseInt(sets.value) || parseInt(sets.value) == 0) &&
+        (parseInt(weight.value) || parseInt(weight.value) == 0)
+    ){
 // push a new object to localstorage array that has current user inputs when this function is called
         fitnessProgressArray.push({
             exercise: document.getElementById("exercise").value,
@@ -171,7 +172,8 @@ submitFitnessBtn.addEventListener('click', function (e) {
         // runs function to update table view
         showFitnessProgress();
     } else {
-        alert('Please enter in valid number values for Repetitions, Sets, and Weight / Resistance');
+        errorModalText.innerHTML = 'Error: Please enter in valid number values for repetitions, sets, and weight / resistance.';
+        errorModal.classList.add('is-active');
 }
 });
 
