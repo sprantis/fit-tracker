@@ -87,8 +87,7 @@ function populateWorkoutStatForm() {
 function workoutSearch(e) {
     e.preventDefault();
 
-// local variable to dynamically grab inner HTML of muscle group
-// button when function is called
+    // local variable to dynamically grab inner HTML of muscle group button when function is called
     let workInputValue = this.innerHTML;
 
 // ajax call to return entire list of exercises with no specific search criteria
@@ -108,8 +107,7 @@ function workoutSearch(e) {
         let results = response.results;
         let specificMuscleGroupArray = [];
 
-        // for every workout that matches in name and the language is English,
-        // push it to the specificMuscleGroupArray
+        // for every workout that matches in name and the language is English, push it to the specificMuscleGroupArray
         for (i = 0; i < results.length; i++) {
             if (
                 workInputValue == results[i].category.name &&
@@ -126,8 +124,7 @@ function workoutSearch(e) {
     })    
 };
 
-// clear out localstorage where the key is fitnessProgress and
-// re - display the fitness progress table
+// clear out localstorage where the key is fitnessProgress and re - display the fitness progress table
 function clearFitnessStatHistory() {
     // using const to make sure that this variable does not get altered elsewhere
     const getFitnessStorage = localStorage.getItem('fitnessProgress') || [];
@@ -138,9 +135,8 @@ function clearFitnessStatHistory() {
 }
 
 // needed to use FOR loop, because muscleGroupBtns returns a node list
-// instead of a single node.Can only use.addEventListerner to a single
-// node, not a node list.
-    // Reference link for adding event to buttons via for loop: https://stackoverflow.com/questions/21700364/adding-click-event-listener-to-elements-with-the-same-class
+// instead of a single node.Can only use.addEventListerner to a single node, not a node list.
+// Reference link for adding event to buttons via for loop: https://stackoverflow.com/questions/21700364/adding-click-event-listener-to-elements-with-the-same-class
 for (i = 0; i < muscleGroupBtns.length; i++) {
     muscleGroupBtns[i].addEventListener("click", workoutSearch);
 }
@@ -153,13 +149,13 @@ submitFitnessBtn.addEventListener('click', function (e) {
     // needed to define array locally within function. Global variable would not work
     const fitnessProgressArray = getFitnessProgress();
 
-// if statement confirms that reps, sets, and weight inputs from user are valid numbers
+    // if statement confirms that reps, sets, and weight inputs from user are valid numbers
     if (
         (parseInt(reps.value) || parseInt(reps.value) == 0) &&
         (parseInt(sets.value) || parseInt(sets.value) == 0) &&
         (parseInt(weight.value) || parseInt(weight.value) == 0)
     ){
-// push a new object to localstorage array that has current user inputs when this function is called
+        // push a new object to localstorage array that has current user inputs when this function is called
         fitnessProgressArray.push({
             exercise: document.getElementById("exercise").value,
             reps: document.getElementById("repetitions").value,
