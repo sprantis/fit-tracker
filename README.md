@@ -27,7 +27,7 @@ This app is about tracking YOUR progress, YOUR journey, and YOUR successes. It d
 
 (Sorry, Cindy. Nothing personal.)
 
-This app was built using HTML5, CSS3, JavaScript, jQuery, Bulma.css, Moment.js, and Font Awesome
+This app was built using HTML5, CSS3, JavaScript, jQuery, Bulma.css, Moment.js, and Font Awesome.
 
 Fitness API: https://wger.de/en/software/api | 
 Nutrition API: https://fdc.nal.usda.gov/api-guide.html
@@ -39,6 +39,8 @@ N/A
 [Click here to check it out!](https://sprantis.github.io/fit-tracker/)
 
 ![Fit Tracker Screenshot](./assets/images/fit-tracker.png)
+
+To get started, click on an option under Fitness or Nutrition to prepopulate relevant health data regarding your choice. After that, click 'Submit' to start tracking your progress!
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
