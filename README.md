@@ -37,7 +37,7 @@ Nutrition: https://fdc.nal.usda.gov/api-guide.html
 N/A
 
 ## Usage Information
-Deployed Link:[https://sprantis.github.io/fit-tracker/]
+[Click here to check it out!](https://sprantis.github.io/fit-tracker/)
 
 ![Fit Tracker Screenshot](./assets/images/fit-tracker.png)
 
