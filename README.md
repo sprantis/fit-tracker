@@ -1,10 +1,17 @@
-# fit-tracker
 ## Fit Tracker
 
-## Deployed Link:
-[https://sprantis.github.io/fit-tracker/]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Description: 
+## Table of Contents
+* [Description](#description)
+* [Installation instructions](#installation-instructions)
+* [Usage Information](#usage-information)
+* [License](#license)
+* [Contribution Guidelines](#contribution-guidelines)
+* [Test Instructions](#test-instructions)
+* [Questions](#questions)
+
+## Description
 Do you have time to talk about the frustrating experience of today’s Fitness Apps in the app store?
 
 Have you ever tried Apps that track your steps and your calories, after slaving in the gym for hours, only to find out that you power-walked 2,000 steps and burned a measly 5 calories?
@@ -20,18 +27,26 @@ This app is about tracking YOUR progress, YOUR journey, and YOUR successes. It d
 
 (Sorry, Cindy. Nothing personal.)
 
+This app was built using HTML5, CSS3, JavaScript, jQuery, Bulma.css, Moment.js, and Font Awesome
 
+APIs:
+Fitness: https://wger.de/en/software/api
+Nutrition: https://fdc.nal.usda.gov/api-guide.html
 
+## Installation Instructions
+N/A
 
-## Techonologies used: 
-HTML5, CSS3, JavaScript, jQuery, Bulma.css, Moment.js, Font Awesome
+## Usage Information
+Deployed Link:[https://sprantis.github.io/fit-tracker/]
 
-Fitness API: https://wger.de/en/software/api | 
-Nutrition API: https://fdc.nal.usda.gov/api-guide.html
-
-
-## Screenshot:
 ![Fit Tracker Screenshot](./assets/images/fit-tracker.png)
 
-## Repo Link:
-[https://github.com/sprantis/fit-tracker]
+## License
+[MIT](https://opensource.org/licenses/MIT)
+
+## Contribution Guidelines
+N/A
+
+## Test Instructions
+N/A
+
